@@ -1,15 +1,21 @@
 window.onload = () => {
     const from = document.getElementById('form');
-    const formData = new FormData(from);
-    const onArchiveLoad = (file) => formData.set('archiveFile', file);
+    let file = {};
+    const onArchiveLoad = (file1) => file = file1;
     createDropZone('drop-zone1', onArchiveLoad);
     InitializeDropdowns();
-
     from.onsubmit = (e) => {
         e.preventDefault();
-        for (var value of formData.values()) {
-            console.log(value);
-        }
+        const formData = new FormData(from);
+        formData.set('archiveFile', file);
+        sendData(formData);
     }
 
+    const sendData = async (data) => {
+        const response = await fetch('/', {
+            method: 'POST', 
+            body: data
+        });
+        console.log(response);
+    }
 }

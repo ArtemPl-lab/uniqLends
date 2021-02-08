@@ -43,50 +43,45 @@
             <div class="container">
                 <form class="form" id="form">
                     <div class="form-row">
-                        <label for="code-before-head" class="input-label">Код перед &lt;/head&gt;</label>
-                        <textarea name="code-before-head" id="code-before-head"></textarea>
+                        <label for="pre_head" class="input-label">Код перед &lt;/head&gt;</label>
+                        <textarea name="pre_head" id="pre_head"></textarea>
                         <div class="inp-desc">В это поле, вставляем код обработчик отправки лидов или любые другие скрипты, которые должны загружаться с самого начала страницы. Можно оставить пустым.</div>
                     </div>
                     <div class="form-row">
-                        <label for="code-after-body" class="input-label">Код после &lt;body&gt;</label>
-                        <textarea name="code-after-body" id="code-after-body"></textarea>
+                        <label for="post_body" class="input-label">Код после &lt;body&gt;</label>
+                        <textarea name="post_body" id="post_body"></textarea>
                         <div class="inp-desc">Поле для кода после body - можно вставить счетчик, пиксель или что-то еще. Можно оставить пустым.</div>
                     </div>
                     <div class="form-row">
-                        <label for="code-before-form" class="input-label">Код перед &lt;/form&gt;</label>
-                        <textarea name="code-before-form" id="code-before-form"></textarea>
+                        <label for="pre_form" class="input-label">Код перед &lt;/form&gt;</label>
+                        <textarea name="pre_form" id="pre_form"></textarea>
                         <div class="inp-desc">Поле для того, чтобы вставить скрытые поля с subid или что-то подобное. Можно оставить пустым.</div>
                     </div>
                     <div class="form-row">
-                        <label for="code-before-form" class="input-label">Код перед &lt;/form&gt;</label>
-                        <textarea name="code-before-form" id="code-before-form"></textarea>
-                        <div class="inp-desc">Поле для того, чтобы вставить скрытые поля с subid или что-то подобное. Можно оставить пустым.</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-col">
-                            <input type="checkbox" name="unic-id" id="unic-id">
-                            <label for="unic-id" class="checkbox-label">Уникализировать атрибуты id</label>
+                        <div class="form-col-sm">
+                            <input type="checkbox" name="replace_id" id="replace_id">
+                            <label for="replace_id" class="checkbox-label">Уникализировать атрибуты id</label>
                             <div class="inp-desc">Что такое id можно <a href="#">посмотреть тут</a>. Будет заменено в .html и .php файлах, а также в .css</div>
                         </div>
-                        <div class="form-col">
-                            <input type="checkbox" name="unic-class" id="unic-class">
-                            <label for="unic-class" class="checkbox-label">Уникализировать имена class</label>
+                        <div class="form-col-sm">
+                            <input type="checkbox" name="replace_class" id="replace_class">
+                            <label for="replace_class" class="checkbox-label">Уникализировать имена class</label>
                             <div class="inp-desc">Что такое id можно <a href="#">посмотреть тут</a>. Будет заменено в .html и .php файлах, а также в .css</div>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-col">
-                            <input type="checkbox" name="break-words" id="break-words">
-                            <label for="break-words" class="checkbox-label">Разбивать слова мусором</label>
+                        <div class="form-col-sm">
+                            <input type="checkbox" name="insert_garbage" id="insert_garbage">
+                            <label for="insert_garbage" class="checkbox-label">Разбивать слова мусором</label>
                             <div class="inp-desc">
                                 Все слова в контенте (в body) которые больше 3 символов будут разбиты невидимым
                                 мусором вида: сл&lt;span style=&quot;display:none;&quot;&gt;random&lt;/span&gt;ово, слова которые в мета тегах
                                 изменяться не будут.
                             </div>
                         </div>
-                        <div class="form-col">
-                            <input type="checkbox" name="privacy" id="privacy">
-                            <label for="privacy" class="checkbox-label">Добавить Privacy policy и Terms and Conditions</label>
+                        <div class="form-col-sm">
+                            <input type="checkbox" name="add_terms" id="add_terms">
+                            <label for="add_terms" class="checkbox-label">Добавить add_terms policy и Terms and Conditions</label>
                             <div class="inp-desc">
                                 В архив будут добавлены страницы privacy-policy.html и terms.html, а также во все .html и
                                 .php файлы перед &lt;/body&gt; будут добавлены ссылки на них.
@@ -95,8 +90,8 @@
                     </div>
                     <div class="form-row">
                         <div>
-                            <input type="checkbox" name="my-url" id="my-url">
-                            <label for="my-url" class="checkbox-label">URL своих ссылок</label>
+                            <input type="checkbox" name="replace_href" id="replace_href">
+                            <label for="replace_href" class="checkbox-label">URL своих ссылок</label>
                         </div>
                         <div class="hidden-inp">
                             <input type="text">
@@ -171,7 +166,7 @@
                     <div class="form-row-min">
                         <input type="checkbox" name="add-rand-noise" id="add-rand-noise">
                         <label for="add-rand-noise" class="checkbox-label">Наложить случайный шум на изображение</label>
-                        <div class="form-col">
+                        <div class="form-col-sm">
                             <div class="inp-desc">Тип шума:</div>
                             <div class="custom-dropdown">
                                 <div class="custom-dropdown__btn" tabindex="0" outfor="type-noise">
@@ -189,41 +184,41 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-col"></div>
+                        <div class="form-col-sm"></div>
                     </div>
                     <div class="form-row-min">
-                        <input type="checkbox" name="add-frame" id="add-frame">
-                        <label for="add-frame" class="checkbox-label">Создание рамки вокруг картинки</label>
-                        <div class="form-col">
+                        <input type="checkbox" name="border" id="border">
+                        <label for="border" class="checkbox-label">Создание рамки вокруг картинки</label>
+                        <div class="form-col-sm">
                             <div class="inp-desc">Цвет:</div>
                             <div class="custom-dropdown">
-                                <div class="custom-dropdown__btn" tabindex="0" outfor="frame-color">
+                                <div class="custom-dropdown__btn" tabindex="0" outfor="border_color">
                                     Выберите цвет
                                 </div>
                                 <div class="custom-dropdown__drop-block">
-                                    <input type="radio" name="frame-color" id="frame-color1" class="custom-dropdown__checkbox">
-                                    <label for="frame-color1" class="custom-dropdown__checkbox-label">First el 1</label>
+                                    <input type="radio" name="border_color" id="border_color1" class="custom-dropdown__checkbox">
+                                    <label for="border_color1" class="custom-dropdown__checkbox-label">First el 1</label>
 
-                                    <input type="radio" name="frame-color" id="frame-color2" class="custom-dropdown__checkbox">
-                                    <label for="frame-color2" class="custom-dropdown__checkbox-label">First el 2</label>
+                                    <input type="radio" name="border_color" id="border_color2" class="custom-dropdown__checkbox">
+                                    <label for="border_color2" class="custom-dropdown__checkbox-label">First el 2</label>
                                     
-                                    <input type="radio" name="frame-color" id="frame-color3" class="custom-dropdown__checkbox">
-                                    <label for="frame-color3" class="custom-dropdown__checkbox-label">First el 3</label>
+                                    <input type="radio" name="border_color" id="border_color3" class="custom-dropdown__checkbox">
+                                    <label for="border_color3" class="custom-dropdown__checkbox-label">First el 3</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-col">
+                        <div class="form-col ml-sm-0 mt-sm">
                             <div class="inp-desc">Ширина рамки пикселей:</div>
-                            <input type="text">
+                            <input type="text" name="border_width">
                         </div>
-                        <div class="form-col">
+                        <div class="form-col mt-sm">
                             <div class="inp-desc">Высота рамки пикселей:</div>
-                            <input type="text">
+                            <input type="text" name="border_height">
                         </div>
                     </div>
                     <div class="form-row">
-                        <input type="checkbox" name="gray-filter" id="gray-filter">
-                        <label for="gray-filter" class="checkbox-label">Изображение в градациях серого с трехмерным эффектом</label>
+                        <input type="checkbox" name="emboss" id="emboss">
+                        <label for="emboss" class="checkbox-label">Изображение в градациях серого с трехмерным эффектом</label>
                         <div class="form-col">
                             <div class="inp-desc">Радиус эффекта:</div>
                             <input type="text">
@@ -234,67 +229,68 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-col">
-                            <input type="checkbox" name="speckle-noise" id="speckle-noise">
-                            <label for="speckle-noise" class="checkbox-label">Уменьшить спекл-шум на изображении</label>
+                        <div class="form-col-sm">
+                            <input type="checkbox" name="despeckle" id="despeckle">
+                            <label for="despeckle" class="checkbox-label">Уменьшить спекл-шум на изображении</label>
                         </div>
-                        <div class="form-col">
-                            <input type="checkbox" name="improve-quality" id="improve-quality">
-                            <label for="improve-quality" class="checkbox-label">Улучшить качество шумного изображения</label>
+                        <div class="form-col-sm">
+                            <input type="checkbox" name="denoise" id="denoise">
+                            <label for="denoise" class="checkbox-label">Улучшить качество шумного изображения</label>
                         </div>
                     </div>
                     <div class="form-row">
-                        <input type="checkbox" name="random-offset-pixel" id="random-offset-pixel">
-                        <label for="random-offset-pixel" class="checkbox-label">Случайно сместить каждый пиксель в блоке (размытие)</label>
-                        <div class="form-col">
+                        <input type="checkbox" name="spread" id="spread">
+                        <label for="spread" class="checkbox-label">Случайно сместить каждый пиксель в блоке (размытие)</label>
+                        <div class="form-col-sm">
                             <div class="inp-desc">Радиус эффекта:</div>
-                            <input type="text">
+                            <input type="text" name="spread_radius">
                         </div>
                         <div class="form-col"></div>
                     </div>
                     <div class="form-row">
-                        <input type="checkbox" name="paint-over-pixels" id="paint-over-pixels">
-                        <label for="paint-over-pixels" class="checkbox-label">Закрутить пиксели вокруг центра изображения</label>
-                        <div class="form-col">
+                        <input type="checkbox" name="swirl" id="swirl">
+                        <label for="swirl" class="checkbox-label">Закрутить пиксели вокруг центра изображения</label>
+                        <div class="form-col-sm">
                             <div class="inp-desc">Градусы размаха дуги:</div>
-                            <input type="text">
+                            <input type="text" name="swirl_radius">
                         </div>
-                        <div class="form-col"></div>
+                        <div class="form-col-sm"></div>
                     </div>
                     <div class="form-row">
                         <input type="checkbox" name="water-mark" id="water-mark">
                         <label for="water-mark" class="checkbox-label">Наложение ватермарка</label>
-                        <div class="form-col">
-                            <div class="inp-desc">Расположение по оси Y:</div>
-                            <input type="text">
+                        <div class="form-col-sm">
+                            <div class="inp-desc">.PNG картинка-ватермарк:</div>
+                            <input type="file" name="water-mark-file" id="water-mark-file" class="file-inp">
+                            <label for="water-mark-file" class="file-inp-label">Выберите файл</label>
                         </div>
-                        <div class="form-col">
+                        <div class="form-col ml-sm-0 mt-sm">
                             <div class="inp-desc">Расположение по оси X:</div>
-                            <input type="text">
+                            <input type="text" name="watermark_x">
                         </div>
-                        <div class="form-col">
+                        <div class="form-col mt-sm">
                             <div class="inp-desc">Расположение по оси Y:</div>
-                            <input type="text">
+                            <input type="text" name="watermark_y">
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-col">
+                        <div class="form-col-sm">
                             <div class="input-label">
                                 Тематика сайта:
                             </div>
                             <div class="custom-dropdown">
-                                <div class="custom-dropdown__btn" tabindex="0" outfor="site-theme">
+                                <div class="custom-dropdown__btn" tabindex="0" outfor="theme">
                                     Выберите тип:
                                 </div>
                                 <div class="custom-dropdown__drop-block">
-                                    <input type="radio" name="site-theme" id="site-theme1" class="custom-dropdown__checkbox">
-                                    <label for="site-theme1" class="custom-dropdown__checkbox-label">First el 1</label>
+                                    <input type="radio" name="theme" id="theme1" class="custom-dropdown__checkbox">
+                                    <label for="theme1" class="custom-dropdown__checkbox-label">First el 1</label>
 
-                                    <input type="radio" name="site-theme" id="site-theme2" class="custom-dropdown__checkbox">
-                                    <label for="site-theme2" class="custom-dropdown__checkbox-label">First el 2</label>
+                                    <input type="radio" name="theme" id="theme2" class="custom-dropdown__checkbox">
+                                    <label for="theme2" class="custom-dropdown__checkbox-label">First el 2</label>
                                     
-                                    <input type="radio" name="site-theme" id="site-theme3" class="custom-dropdown__checkbox">
-                                    <label for="site-theme3" class="custom-dropdown__checkbox-label">First el 3</label>
+                                    <input type="radio" name="theme" id="theme3" class="custom-dropdown__checkbox">
+                                    <label for="theme3" class="custom-dropdown__checkbox-label">First el 3</label>
                                 </div>
                             </div>
                         </div>

@@ -110,15 +110,16 @@ header{
 [class*="form-row"] > *:not([class*="form-col"]){
     width: 100%;
 }
-[class*="form-row"] > .form-col{
+[class*="form-row"] > [class*="form-col"]{
     flex-grow: 1;
     flex-basis: 0;
     max-width: 100%;
     margin-left: 40px;
 }
-[class*="form-row"] > .form-col:first-of-type{
+[class*="form-row"] > [class*="form-col"]:first-of-type{
     margin-left: 0;
 }
+
 .form-row-min{
     max-width: 842px;
 }
@@ -395,4 +396,156 @@ input[type="checkbox"]:checked + .checkbox-label::after{
 .custom-dropdown__checkbox:checked + .custom-dropdown__checkbox-label::after{
     background-image: url(../images/svg/checkbox_dot.svg);
 }
+.file-inp-label{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    padding: 9px 5px;
+    background: #FF6000;
+    border-radius: 11px;
+    position: relative;
+    display: block;
+    max-width: 90px;
+    margin-top: 18px;
+}
+.file-inp-label::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 200px;
+    background: #F6F8FC;
+    border-radius: 11px;
+    z-index: -1;
+}
+.file-inp{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
 /* ---form styles end--- */
+@media screen and (max-width: 428px){
+    .input-label{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #132449;
+    }
+    .inp-desc{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 9px;
+        line-height: 11px;
+        color: #8692A6;
+    }
+    .form-col-sm{
+        margin-left: 0 !important;
+        flex-basis: auto !important;
+        margin-top: 19px;
+        width: 100%;
+    }
+    .form-col-sm:first-child{
+        margin-top: 0;
+    }
+    .checkbox-label{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #132449;
+        display: flex;
+        justify-content: space-between;
+    }
+    .radio-group{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .radio-group__label{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #8692A6;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+    .radio-group-inp:checked + .radio-group__label{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #FFFFFF;
+    }
+    .form-row-min .checkbox-label{
+        /* margin-bottom: 0; */
+    }
+    .ml-sm-0{
+        margin-left: 0 !important;
+    }
+    .mt-sm{
+        margin-top: 7px;
+    }
+    .checkbox-label{}
+    .file-inp-label{
+        height: 42px;
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+        padding: 14px 18px;
+        box-sizing: border-box;
+    }
+    .file-inp-label::after{
+        width: 200%;
+    }
+    .drop-zone{
+        background-image: none;
+        border-radius: 0;
+        position: absolute;
+        left: 0;
+        width: 107%;
+    }
+    .drop-zone::before{  
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        right: 7px;
+        bottom: 7px;
+        background: url('data:image/svg+xml;utf8, <svg viewBox="0 0 100% 100%" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="100%" height="100%" stroke="white" stroke-dasharray="10 10"/></svg>');
+        z-index: 0;
+    }
+    .file-drop{
+        min-height: 320px;
+    }
+    .drop-zone__title{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .drop-zone__file-input-btn{
+        padding: 13px 27px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        color: #FF6000;
+    }
+    .drop-zone__desc{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 9px;
+        line-height: 11px;
+        text-align: center;
+        max-width: 280px;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+}
