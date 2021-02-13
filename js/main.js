@@ -22,7 +22,10 @@ window.onload = () => {
         textAreas.forEach(textarea => {
             store[`${textarea.name}`] = textarea.value;
         });
-
+        let radios = document.getElementById('input[type="radio"]:checked');
+        radios.forEach(radio=>{
+            radio[`${radio.name}`] = radio.value;
+        });
         formData.set('params', JSON.stringify(store));
         
         let watermarkInp = document.getElementById('water-mark-file');
