@@ -3,6 +3,7 @@ window.onload = () => {
     let file = {};
     const onArchiveLoad = (file1) => file = file1;
     createDropZone('drop-zone1', onArchiveLoad);
+    initializeColors();
     InitializeDropdowns();
     from.onsubmit = (e) => {
         e.preventDefault();
