@@ -25,7 +25,7 @@ window.onload = () => {
         });
         let radios = document.getElementById('input[type="radio"]:checked');
         radios.forEach(radio=>{
-            radio[`${radio.name}`] = radio.value;
+            store[`${radio.name}`] = radio.value;
         });
         formData.set('params', JSON.stringify(store));
         
