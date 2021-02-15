@@ -362,7 +362,8 @@ input[type="checkbox"]:checked + .checkbox-label::after{
     z-index: 3;
 }
 .custom-dropdown__btn:focus + .custom-dropdown__drop-block{
-    max-height: 100000px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 .custom-dropdown__checkbox-label{
     display: block;
