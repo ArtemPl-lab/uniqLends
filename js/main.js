@@ -23,7 +23,7 @@ window.onload = () => {
         textAreas.forEach(textarea => {
             store[`${textarea.name}`] = textarea.value;
         });
-        let radios = document.getElementById('input[type="radio"]:checked');
+        let radios = document.querySelectorAll('input[type="radio"]:checked');
         radios.forEach(radio=>{
             store[`${radio.name}`] = radio.value;
         });
