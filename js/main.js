@@ -34,7 +34,7 @@ window.onload = () => {
 
         sendData(formData);
     }
-
+// this comment 
     const sendData = async (data) => {
         const response = await fetch('https://slpv.foxcpp.dev/landing', {
             method: 'POST', 
