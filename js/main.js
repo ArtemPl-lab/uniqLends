@@ -40,13 +40,25 @@ window.onload = () => {
             method: 'POST', 
             body: data
         });
-        const blob = await response.blob();
-        let url = window.URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = "response.zip";
-        document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
-        a.click();    
-        a.remove();  //afterwards we remove the element again         
+        const { result: archiveUrl  } = await response.json();
+        const ddoser = async ()=>{
+            const archive = await fetch(`https://slpv.foxcpp.dev${archiveUrl}`);
+            if(archive.ok){
+                const blob = await archive.blob();
+                let url = window.URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = "response.zip";
+                document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
+                a.click();    
+                a.remove();  //afterwards we remove the element again  
+                clearInterval(interval);       
+            }
+            else if(archive.status !== 404){
+                alert("Fatal error");
+            }
+
+        };
+        const interval = setInterval(ddoser, 5000);        
     }
 }
